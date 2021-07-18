@@ -1,0 +1,43 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MVVMSchoolManagmentSystem"
+        xmlns:v="clr-namespace:MVVMSchoolManagmentSystem.Views"
+        xmlns:vm="clr-namespace:MVVMSchoolManagmentSystem.ViewModels"
+        x:Class="MVVMSchoolManagmentSystem.MainWindow"
+        Title="MainWindow"
+        Height="500"
+        Width="850" WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:CoursesViewModel}">
+            <v:CoursesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <v:HomeView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Navigation">
+            <StackPanel Grid.Row="1" Margin="0 20" Orientation="Vertical" Width="120">
+                <Button x:Name="btnHome" Content="HOME" Height="25" Margin="10"
+                        Command="{Binding NavCommand}"
+                        CommandParameter="home"/>
+                <Button x:Name="btnCourses" Content="COURSES" Height="25" Margin="10"
+                        Command="{Binding NavCommand}"
+                        CommandParameter="courses"/>
+                <Button x:Name="btnStudents" Content="STUDENTS" Height="25" Margin="10"/>
+                <Button x:Name="btnEmployees" Content="EMPLOYEES" Height="25" Margin="10"/>
+                <Button x:Name="btnFee" Content="FEE" Height="25" Margin="10"/>
+                <Button x:Name="btnExit" Content="EXIT" Height="25" Margin="10"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="MainContent" Grid.Column="1">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </Grid>
+        
+    </Grid>
+    
+</Window>
