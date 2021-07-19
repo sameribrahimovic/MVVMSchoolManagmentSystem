@@ -1,4 +1,4 @@
-﻿using MVVMSchoolManagmentSystem.ViewModels;
+using MVVMSchoolManagmentSystem.ViewModels;
 using System.Windows.Controls;
 
 namespace MVVMSchoolManagmentSystem.Views
@@ -11,7 +11,7 @@ namespace MVVMSchoolManagmentSystem.Views
         public CoursesView()
         {
             InitializeComponent();
-            DataContext = new CoursesViewModel();
+            //DataContext = new CoursesViewModel();
         }
     }
 }

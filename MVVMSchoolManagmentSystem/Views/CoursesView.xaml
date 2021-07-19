@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMSchoolManagmentSystem.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="830">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,9 +19,12 @@
         <StackPanel Grid.Row="0"  Orientation="Horizontal">
             <Label Content="Search" FontSize="24" Margin="0 0 10 0" VerticalAlignment="Center"/>
             <TextBox Name="txtPretraga" Width="259" Margin="0,34,0,24"/>
-            <Button Content="Add" Name="btnAdd" Width="120" Margin="60,34,10,24" FontSize="20" FontWeight="Bold" Height="35" FontStretch="SemiCondensed" />
-            <Button Content="Update" Name="btnUpdate" Width="120" Margin="10,34,10,24" FontSize="20" FontWeight="Bold" Height="35" FontStretch="SemiCondensed" />
-            <Button Content="Delete" Name="btnDelete" Width="120" Margin="10,34,10,24" FontSize="20" FontWeight="Bold" Height="35" FontStretch="SemiCondensed" />
+            <Button Content="Add" Name="btnAdd" Width="120" Margin="60,34,10,24" FontSize="20" FontWeight="Bold" Height="35" 
+                    Command="{Binding AddCommand}"/>
+            <Button Content="Update" Name="btnUpdate" Width="120" Margin="10,34,10,24" FontSize="20" FontWeight="Bold" Height="35" 
+                    Command="{Binding EditCommand}"/>
+            <Button Content="Delete" Name="btnDelete" Width="120" Margin="10,34,10,24" FontSize="20" FontWeight="Bold" Height="35" 
+                    />
         </StackPanel>
         <DataGrid Name="dgCourse" ItemsSource="{Binding Courses}" Grid.Row="1" ColumnWidth="*" IsReadOnly="True" Background="White">
         </DataGrid>

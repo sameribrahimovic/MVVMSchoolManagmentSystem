@@ -2,17 +2,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:MVVMSchoolManagmentSystem"
         xmlns:v="clr-namespace:MVVMSchoolManagmentSystem.Views"
+        xmlns:ve="clr-namespace:MVVMSchoolManagmentSystem.Views.Editors"
         xmlns:vm="clr-namespace:MVVMSchoolManagmentSystem.ViewModels"
+        xmlns:vme="clr-namespace:MVVMSchoolManagmentSystem.ViewModels.EditorViewModels"
         x:Class="MVVMSchoolManagmentSystem.MainWindow"
         Title="MainWindow"
         Height="500"
         Width="850" WindowState="Maximized">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:CoursesViewModel}">
             <v:CoursesView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:HomeViewModel}">
             <v:HomeView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vme:AddEditCoursesViewModel}">
+            <ve:AddEditCoursesView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
